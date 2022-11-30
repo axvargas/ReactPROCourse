@@ -25,6 +25,11 @@ interface MyLabelProps {
    * This is the color of the text in HEX
    */
   fontColor?: string
+
+  /**
+   * This is the background color of the text in HEX
+   */
+  backgroundColor?: string
 }
 
 
@@ -36,11 +41,12 @@ const MyLabel = ({
   size = 'normal',
   upperCase = false,
   color = 'primary',
-  fontColor = '#000000'
+  fontColor = '#000000',
+  backgroundColor = 'transparent',
 }: MyLabelProps ) => {
 
   return (
-    <span className={`label ${size} text-${color}`} style={{color: fontColor}}>
+    <span className={`label ${size} text-${color}`} style={{color: fontColor, backgroundColor}}>
       {upperCase ? label.toUpperCase() : label}
     </span>
   )
